@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import clsx from 'clsx'
 import Villain from '@/index.js'
 import Field from './components/field.js'
 
@@ -20,7 +19,7 @@ export const parseEvent = target => {
 const Demo = () => {
   const [file, setFile] = useState('static/archives/example.zip')
   const [options, setOptions] = useState({
-    theme: { type: 'select', value: 'Light', options: ['Dark', 'Light'] },
+    theme: { type: 'radio', value: 'Light', options: ['Dark', 'Light'] },
     maxPages: 500,
     mangaMode: false,
     forceSort: false,
@@ -44,6 +43,7 @@ const Demo = () => {
     return Object.entries(options).map(([key, value]) => {
       let type = 'text'
       if (isBoolean(value)) type = 'boolean'
+      else if (!isNaN(value)) type = 'number'
       if (isObject(options[key]) && value.type) type = value.type
       return (
         <Field

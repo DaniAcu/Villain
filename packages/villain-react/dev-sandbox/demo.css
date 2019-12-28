@@ -99,6 +99,55 @@ body,
   position: relative;
 }
 
+.villain-demo .field .custom-input {
+  display: block;
+  width: 100%;
+  border-radius: 0.2rem;
+  padding: 0.5em 0.75em;
+  color: var(--primary-text);
+}
+
+.villain-demo .field .custom-input:focus,
+.villain-demo .field .custom-input:active{
+  box-shadow: 0 0 0 0.2em var(--input-border);
+  outline: 0;
+}
+
+.villain-demo .field .custom-btn {
+  box-sizing: border-box;
+  cursor: pointer;
+  color: var(--primary-bg);
+  background-color: var(--secondary-bg);
+  padding: 0.375em 0.75em;
+  border-radius: 0.25rem;
+  position: relative;
+}
+
+.villain-demo .field .custom-radio-group {
+  display: inline-flex;
+}
+
+.villain-demo .field .custom-btn-radio {
+  border-radius: 0;
+  border: 0;
+  color: var(--primary-text);
+  background-color: var(--card-bg);
+  font-size: 1em;
+}
+
+.villain-demo .field .custom-btn-radio:first-of-type {
+  border-radius: .25rem 0 0 .25rem;
+}
+
+.villain-demo .field .custom-btn-radio:last-of-type{
+  border-radius: 0 .25rem .25rem 0;
+}
+
+.villain-demo .field .custom-btn-radio.active {
+  background-color: var(--secondary-bg);
+  color: var(--primary-bg);
+}
+
 .villain-demo .field .custom-checkbox-input {
   opacity: 1;
   position: relative;
@@ -123,7 +172,7 @@ body,
 }
 
 .villain-demo .field .custom-checkbox-input:checked::before {
-  background: #ff5c65;
+  background: var(--secondary-bg);
 }
 
 .villain-demo .field .custom-checkbox-input::after {
@@ -135,7 +184,7 @@ body,
   width: 4px;
   height: 8px;
   transform: translate(-50%, -50%);
-  border: solid #fff;
+  border: solid var(--primary-bg);
   border-width: 0 3px 3px 0;
   transform: rotate(45deg);
   cursor: pointer;
